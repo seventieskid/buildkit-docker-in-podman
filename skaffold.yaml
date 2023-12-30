@@ -2,17 +2,17 @@ apiVersion: skaffold/v4beta8
 kind: Config
 build:
   artifacts:
-  - image: skaffold-example
+  - image: ghcr.io/seventieskid/busybox
     context: .
     docker:
       cliFlags:
-      - --load
-      dockerfile: Dockerfile
+      - --load      # Ensures image is available in docker image store
+      dockerfile: Inner-Dockerfile
       noCache: true
   tagPolicy:
     gitCommit: {}
   local:
-    push: false
+    push: true
     useDockerCLI: true
     useBuildkit: true
     concurrency: 0
