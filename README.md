@@ -111,6 +111,6 @@ skaffold build -f skaffold.yaml
   Build [ghcr.io/seventieskid/busybox] succeeded
 
 # Stops the temporary buildkit daemon
-docker buildx rm buildx-${GIT_COMMIT_SHA}
-docker stop buildkitd-${GIT_COMMIT_SHA}
+docker buildx rm buildx-${PORT}
+docker stop buildkitd-${PORT}
 ```
